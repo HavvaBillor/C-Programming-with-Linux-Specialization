@@ -27,7 +27,7 @@ int main(void){
     int MB=1000000;
     char type;
     
-    printf("please first enter the data types and number that you want to compute");
+    //printf("please first enter the data types and number that you want to compute");
     scanf("%c %d",&type,&num);
     
     if(type=='c'){
@@ -43,10 +43,10 @@ int main(void){
         result =num*sizeof(double);
     }
     
-    if (result >= mb) {
-    printf("%d MB and %d KB and %d B\n", result/mb, (result/kb)%kb, result%kb);
-  } else if (result >= kb) {
-    printf("%d KB and %d B\n", result/kb, result%kb);
+    if (result >= MB) {
+    printf("%d MB and %d KB and %d B\n", result/MB, (result/KB)%KB, result%KB);
+  } else if (result >= KB) {
+    printf("%d KB and %d B\n", result/KB, result%KB);
   } else {
     printf("%d B\n", result);
   }
