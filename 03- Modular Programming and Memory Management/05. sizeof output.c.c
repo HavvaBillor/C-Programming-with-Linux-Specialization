@@ -43,16 +43,12 @@ int main(void){
         result =num*sizeof(double);
     }
     
-    if(result<KB){
-        printf("%d B",result);
-    }
-    else{
-        if(result>KB && result<MB){
-            printf("%d KB and %d B",(result/1000)%1000,result%1000);
-        }
-        else{
-            printf("%d MB and %d KB and %d B",((result/1000)/1000)%1000,(result/1000)%1000,result%1000);
-        }
-    }
+    if (result >= mb) {
+    printf("%d MB and %d KB and %d B\n", result/mb, (result/kb)%kb, result%kb);
+  } else if (result >= kb) {
+    printf("%d KB and %d B\n", result/kb, result%kb);
+  } else {
+    printf("%d B\n", result);
+  }
   return 0;
 }
